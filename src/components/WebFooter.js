@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 export default class WebFooter extends Component {
   render() {

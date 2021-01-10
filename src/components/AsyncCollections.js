@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import AsyncMovies from "../components/AsyncMovies";
 import "azure-storage/lib/azure-storage";
 import { Select } from "antd";
-import { Card } from "antd";
-const { Meta } = Card;
 
 export default function AsyncCollections() {
   const [netproviders, setNetproviders] = useState([]);

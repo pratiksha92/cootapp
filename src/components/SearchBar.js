@@ -1,24 +1,10 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import Autosuggest from "react-autosuggest";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const headers = {
   "api-key": "E3BEC898888E187D59388EEE072A50CD",
-};
-
-const fetchSuggestedMovies = (value) => {
-  console.log(value);
-  const searchResults = client.search(value + "*", {
-    orderBy: ["popularity desc"],
-    top: 5,
-  });
-  let movies = [];
-  for (const result of searchResults.results) {
-    const { original_title, popularity } = result.document;
-    movies.push({ name: original_title, popularity: popularity });
-  }
-  return movies;
 };
 
 const getSuggestionValue = (suggestion) => suggestion.original_title;
@@ -31,28 +17,6 @@ const renderSuggestion = (suggestion) => (
       {suggestion.original_title}
     </Link>
   </div>
-);
-
-const selectSuggestion = (
-  event,
-  { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
-) => {
-  console.log(suggestionValue);
-};
-
-const { SearchClient, AzureKeyCredential } = require("@azure/search-documents");
-
-// We'll connect to the Azure Cognitive Search public sandbox and send a
-// query to its "nycjobs" index built from a public dataset of available jobs
-// in New York.
-const indexName = "azureblob-index";
-const apiKey = "E3BEC898888E187D59388EEE072A50CD";
-
-// Create a SearchClient to send queries`
-const client = new SearchClient(
-  `https://searchapicoot.search.windows.net`,
-  indexName,
-  new AzureKeyCredential(apiKey)
 );
 
 export default class SearchBar extends Component {
@@ -97,17 +61,15 @@ export default class SearchBar extends Component {
       value,
       onChange: this.onChange,
     };
-    {
-      return (
-        <Autosuggest
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          renderSuggestion={renderSuggestion}
-          inputProps={inputProps}
-        />
-      );
-    }
+    return (
+      <Autosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+      />
+    );
   }
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import AsyncMovies from "../components/AsyncMovies";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import WebsiteNavbar from "../components/WebsiteNavbar";
 import WebFooter from "../components/WebFooter";

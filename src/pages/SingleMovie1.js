@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import WebsiteNavbar from "../components/WebsiteNavbar";
 import WebFooter from "../components/WebFooter";
-import AsyncMovies from "../components/AsyncMovies";
 import AsyncCast from "../components/AsyncCast";
 import AsynCrew from "../components/AsyncCrew";
 import AsyncWatchProviders from "../components/AsyncWatchProviders";
@@ -23,29 +22,19 @@ export default function SingleMovie1() {
           const {
             poster_path: image,
             original_title: title,
-            original_language: language,
-            overview: overview,
-            popularity: popularity,
+            overview,
             release_date: date,
-            runtime: runtime,
-            status: status,
-            tagline: tagline,
-            vote_average: average,
+            runtime,
             backdrop_path: background_image,
-            genres: genres,
+            genres,
           } = data;
 
           const newMovie = {
             title,
             image,
-            language,
             overview,
-            popularity,
             date,
             runtime,
-            status,
-            tagline,
-            average,
             background_image,
             genres,
           };
@@ -66,14 +55,9 @@ export default function SingleMovie1() {
     const {
       title,
       image,
-      language,
       overview,
-      popularity,
       date,
       runtime,
-      status,
-      tagline,
-      average,
       background_image,
       genres,
     } = movie;

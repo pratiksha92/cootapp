@@ -66,6 +66,7 @@ export default function CastBar({ cast, crew }) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
           initialSlide: 2,
         },
       },
@@ -74,6 +75,7 @@ export default function CastBar({ cast, crew }) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
     ],

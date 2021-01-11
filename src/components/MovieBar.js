@@ -57,6 +57,7 @@ export default function MovieBar({ movies, category }) {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
       {
@@ -64,14 +65,16 @@ export default function MovieBar({ movies, category }) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 2,
+          initialSlide: 1,
+          infinite: true,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
     ],

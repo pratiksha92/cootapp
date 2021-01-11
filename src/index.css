@@ -219,6 +219,23 @@ ul {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
+
+@media screen and (max-width: 600px) {
+  /* for mobile screen view */
+  .moviecard img {
+    width: 85%;
+    height: 220 !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  /* for small screen view */
+  .moviecard img {
+    width: 85%;
+    height: 220 !important;
+  }
+}
+
 /* End Movie Card */
 
 .main-section {
@@ -343,8 +360,9 @@ ul {
     padding: 0px !important;
     padding-top: 15px !important;
   }
-  .singlemovieheader-info .singlemovie-tagline {
-    font-size: 15px !important;
+  .singlemoviebox-image .wrap .wrap-image {
+    height: 350px !important;
+    width: 250px !important;
   }
 }
 
@@ -355,14 +373,14 @@ ul {
     padding: 0px !important;
     padding-top: 15px !important;
   }
-  .singlemovieheader-info .singlemovie-tagline {
-    font-size: 14px !important;
+  .singlemoviebox-image .wrap .wrap-image {
+    height: 350px !important;
+    width: 250px !important;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   /* for tablet screen view */
-
   .container,
   .container-md,
   .container-sm {
@@ -385,10 +403,8 @@ ul {
   .singlemovie-title {
     font-size: 25px;
   }
-  .singlemovieheader-info .singlemovie-tagline {
-    font-size: 14px !important;
-  }
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .singlemovieimage-box__content {
     margin: 0 !important;
@@ -413,6 +429,26 @@ ul {
 
 .ant-card-meta-detail > div:not(:last-child) {
   margin-bottom: 1px !important;
+}
+
+@media screen and (max-width: 600px) {
+  /* for mobile screen view */
+  .ant-card-cover img {
+    height: 240px !important;
+  }
+  .ant-card {
+    width: 85% !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  /* for small screen view */
+  .ant-card {
+    width: 85% !important;
+  }
+  .ant-card-cover img {
+    height: 240px !important;
+  }
 }
 /* End Cast card*/
 
@@ -473,14 +509,14 @@ ul {
 }
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
-  .ant-select {
+  .asyncollection .ant-select {
     width: 100% !important;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   /* for small screen view */
-  .ant-select {
+  .asyncollection .ant-select {
     width: 100% !important;
   }
 }

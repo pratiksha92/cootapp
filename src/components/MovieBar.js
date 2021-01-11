@@ -38,46 +38,15 @@ function SamplePrevArrow(props) {
 
 export default function MovieBar({ movies, category }) {
   var settings = {
+    className: "slider variable-width",
     dots: false,
     infinite: false,
-    slidesToShow: 5,
+    slidesToShow: 1,
     slidesToScroll: 1,
+    swipeToSlide: true,
+    variableWidth: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1224,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-    ],
   };
   return (
     <section className="section">

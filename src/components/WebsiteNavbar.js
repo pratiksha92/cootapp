@@ -20,17 +20,12 @@ export default class WebsiteNavbar extends Component {
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <NavDropdown title="Movies" id="basic-nav-dropdown">
-              <NavDropdown.Item href="https://stackoverflow.com/questions/44090065/navbar-for-react-website">
-                Action
+              <NavDropdown.Item href="#comedy">Comedy</NavDropdown.Item>
+              <NavDropdown.Item href="#ScienceFiction">
+                Science Fiction
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#Horror">Horror</NavDropdown.Item>
+              <NavDropdown.Item href="#WarMovies">War</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Series" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -44,9 +39,7 @@ export default class WebsiteNavbar extends Component {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav>
-            <Nav.Link href="SignUp">Sign Up</Nav.Link>
-          </Nav>
+          <Nav></Nav>
         </Navbar.Collapse>
       </Navbar>
     );

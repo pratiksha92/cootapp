@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class WebFooter extends Component {
   render() {
@@ -19,15 +19,27 @@ export default class WebFooter extends Component {
                   </div>
                   <div className="footer-social-icon">
                     <span>Follow us</span>
-                    <Link to="https://github.com/moroshko/react-autosuggest/blob/master/test/always-render-suggestions/AutosuggestApp.js">
+                    <a
+                      href="https://www.linkedin.com/in/pratiksha-bhangdiya-886356129/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FaLinkedinIn className="fab fa-linkedin linkedin-bg"></FaLinkedinIn>
-                    </Link>
-                    <Link to="https://www.facebook.com/pratiksha.somani2">
+                    </a>
+                    <a
+                      href="https://www.facebook.com/pratiksha.somani2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FaFacebookF className="fab fa-facebook facebook-bg"></FaFacebookF>
-                    </Link>
-                    <Link to="https://github.com/pratiksha92">
+                    </a>
+                    <a
+                      href="https://github.com/pratiksha92"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FaGithub className="fab fa-github instagram-bg"></FaGithub>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -41,16 +53,10 @@ export default class WebFooter extends Component {
                       <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="">about</Link>
-                    </li>
-                    <li>
-                      <Link to="">movies</Link>
+                      <Link to="/">movies</Link>
                     </li>
                     <li>
                       <Link to="">Series</Link>
-                    </li>
-                    <li>
-                      <Link to="">Contact Us</Link>
                     </li>
                   </ul>
                 </div>

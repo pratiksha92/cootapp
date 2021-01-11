@@ -94,11 +94,15 @@ export default function SingleMovie1() {
                               <span className="">{date}</span>
                               <span className="bullet"></span>
                               <p>
-                                {genres.map((item, index) => {
-                                  return (
-                                    <span className="comma">{item.name}</span>
-                                  );
-                                })}
+                                {genres ? (
+                                  genres.map((item, index) => {
+                                    return (
+                                      <span className="comma">{item.name}</span>
+                                    );
+                                  })
+                                ) : (
+                                  <div></div>
+                                )}
                               </p>
                               <span className="bullet"></span>
                               <span>{runtime} min</span>

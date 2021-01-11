@@ -25,8 +25,8 @@ body {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgb(228, 222, 222) !important;
-  font-weight: 600;
+  color: white !important;
+  font-weight: 500;
   letter-spacing: 0.1rem;
   font-size: 19px;
 }
@@ -54,7 +54,7 @@ ul {
 
 .footer-widget-heading h3 {
   color: black;
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 500;
   margin-bottom: 25px;
   position: relative;
@@ -85,7 +85,7 @@ ul {
 .footer-social-icon span {
   color: black;
   display: block;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 400;
   margin-bottom: 10px;
 }
@@ -220,19 +220,23 @@ ul {
   -o-transform: scale(1.1);
 }
 
+.moviecard img {
+  padding: 0 10px;
+}
+
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
   .moviecard img {
-    width: 85%;
-    height: 220 !important;
+    width: 150px !important;
+    height: 225px !important;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   /* for small screen view */
   .moviecard img {
-    width: 85%;
-    height: 220 !important;
+    width: 150px !important;
+    height: 225px !important;
   }
 }
 
@@ -361,8 +365,11 @@ ul {
     padding-top: 15px !important;
   }
   .singlemoviebox-image .wrap .wrap-image {
-    height: 350px !important;
-    width: 250px !important;
+    height: 250px !important;
+    width: 60% !important;
+  }
+  .singlemovie-title {
+    font-size: 1.9rem !important;
   }
 }
 
@@ -374,8 +381,11 @@ ul {
     padding-top: 15px !important;
   }
   .singlemoviebox-image .wrap .wrap-image {
-    height: 350px !important;
-    width: 250px !important;
+    height: 250px !important;
+    width: 60% !important;
+  }
+  .singlemovie-title {
+    font-size: 1.9rem !important;
   }
 }
 
@@ -401,7 +411,7 @@ ul {
     padding-right: 0 !important;
   }
   .singlemovie-title {
-    font-size: 25px;
+    font-size: 28px;
   }
 }
 
@@ -434,20 +444,20 @@ ul {
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
   .ant-card-cover img {
-    height: 240px !important;
+    height: 180px !important;
   }
   .ant-card {
-    width: 85% !important;
+    width: 130px !important;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   /* for small screen view */
-  .ant-card {
-    width: 85% !important;
-  }
   .ant-card-cover img {
-    height: 240px !important;
+    height: 180px !important;
+  }
+  .ant-card {
+    width: 130px !important;
   }
 }
 /* End Cast card*/

@@ -8,7 +8,7 @@ export default function AsyncTrending() {
     async function getMovies() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/trending/all/day?api_key=d5d1c00d59add379b91338c04b5755d7`
+          `https://api.themoviedb.org/3/trending/movie/day?api_key=d5d1c00d59add379b91338c04b5755d7`
         );
         const data = await response.json();
         const { results } = data;

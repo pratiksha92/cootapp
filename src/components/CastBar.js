@@ -42,13 +42,14 @@ export default function CastBar({ cast, crew }) {
     infinite: false,
     slidesToShow: 6,
     slidesToScroll: 1,
+    swipeToSlide: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1224,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
           infinite: true,
         },
@@ -56,7 +57,7 @@ export default function CastBar({ cast, crew }) {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
         },
@@ -64,7 +65,7 @@ export default function CastBar({ cast, crew }) {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           initialSlide: 2,
@@ -73,7 +74,7 @@ export default function CastBar({ cast, crew }) {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
         },

@@ -62,7 +62,7 @@ export default function AsyncCollections() {
   }
 
   return (
-    <div className="asyncollection">
+    <div className="asyncollection" id="searchmovies">
       <div className="moviebar-container">
         <h3 className="section-title">Movies for You</h3>{" "}
         <Select
@@ -91,26 +91,34 @@ export default function AsyncCollections() {
           })}
         </Select>
       </div>
-      <AsyncMovies
-        genres="35"
-        watch_providers={selproviders}
-        movie_collection="Comedy Movies"
-      ></AsyncMovies>
-      <AsyncMovies
-        genres="10752"
-        watch_providers={selproviders}
-        movie_collection="War Movies"
-      ></AsyncMovies>
-      <AsyncMovies
-        genres="878"
-        watch_providers={selproviders}
-        movie_collection="Science Fiction"
-      ></AsyncMovies>
-      <AsyncMovies
-        genres="27"
-        watch_providers={selproviders}
-        movie_collection="Horror"
-      ></AsyncMovies>
+      <div id="comedy">
+        <AsyncMovies
+          genres="35"
+          watch_providers={selproviders}
+          movie_collection="Comedy Movies"
+        ></AsyncMovies>
+      </div>
+      <div id="WarMovies">
+        <AsyncMovies
+          genres="10752"
+          watch_providers={selproviders}
+          movie_collection="War Movies"
+        ></AsyncMovies>
+      </div>
+      <div id="ScienceFiction">
+        <AsyncMovies
+          genres="878"
+          watch_providers={selproviders}
+          movie_collection="Science Fiction"
+        ></AsyncMovies>
+      </div>
+      <div id="Horror">
+        <AsyncMovies
+          genres="27"
+          watch_providers={selproviders}
+          movie_collection="Horror"
+        ></AsyncMovies>
+      </div>
     </div>
   );
 }

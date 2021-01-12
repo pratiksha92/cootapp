@@ -71,7 +71,7 @@ export default function SingleMovie1() {
               <div
                 className="jumbotron singlemovie-content-bg-cover"
                 style={{
-                  backgroundImage: `linear-gradient(to bottom right, rgba(92.55%, 90.2%, 87.45%, 1),rgba(92.55%, 90.2%, 87.45%, 0.84)), url("https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${background_image}")`,
+                  backgroundImage: `linear-gradient(to bottom right, rgba(92.55%, 90.2%, 87.45%, 0.8),rgba(92.55%, 90.2%, 87.45%, 0.84)), url("https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${background_image}")`,
                 }}
               >
                 <div className="container singlemovieimage-box__content">

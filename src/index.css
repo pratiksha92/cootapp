@@ -170,11 +170,7 @@ ul {
 
 /* Async Movies */
 .moviebar-container {
-  padding: 50px 80px;
-  /*padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 90px;
-  padding-right: 80px;*/
+  padding: 30px 80px;
 }
 
 @media screen and (max-width: 600px) {
@@ -194,7 +190,7 @@ ul {
 
 /* Movie Bar */
 .section-title {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   font-size: 23px;
   font-weight: 800;
   color: white;
@@ -222,12 +218,13 @@ ul {
 
 .moviecard img {
   padding: 0 10px;
+  height: 260px;
 }
 
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
   .moviecard img {
-    width: 150px !important;
+    /* width: 150px !important;*/
     height: 225px !important;
   }
 }
@@ -235,11 +232,10 @@ ul {
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   /* for small screen view */
   .moviecard img {
-    width: 150px !important;
+    /* width: 150px !important;*/
     height: 225px !important;
   }
 }
-
 /* End Movie Card */
 
 .main-section {
@@ -369,7 +365,7 @@ ul {
     width: 60% !important;
   }
   .singlemovie-title {
-    font-size: 1.9rem !important;
+    font-size: 1.4rem !important;
   }
 }
 
@@ -385,21 +381,22 @@ ul {
     width: 60% !important;
   }
   .singlemovie-title {
-    font-size: 1.9rem !important;
+    font-size: 1.5rem !important;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   /* for tablet screen view */
-  .container,
+  /*.container,
   .container-md,
   .container-sm {
-    max-width: 867px;
-  }
+    width: 100% !important;
+  }*/
 
   .singlemovieimage-box__content {
     margin: 0 !important;
     padding: 0 !important;
+    display: inline !important;
   }
   .singlemoviebox-content {
     margin: 0 !important;
@@ -411,7 +408,7 @@ ul {
     padding-right: 0 !important;
   }
   .singlemovie-title {
-    font-size: 28px;
+    font-size: 28px !important;
   }
 }
 
@@ -433,6 +430,11 @@ ul {
   margin: 10px !important;
 }
 
+.ant-card-cover img {
+  height: 220px;
+  width: 170px;
+}
+
 .ant-card-body {
   padding: 10px !important;
 }
@@ -445,9 +447,10 @@ ul {
   /* for mobile screen view */
   .ant-card-cover img {
     height: 180px !important;
+    width: 155px !important;
   }
   .ant-card {
-    width: 130px !important;
+    width: 155px !important;
   }
 }
 
@@ -455,9 +458,10 @@ ul {
   /* for small screen view */
   .ant-card-cover img {
     height: 180px !important;
+    width: 155px !important;
   }
   .ant-card {
-    width: 130px !important;
+    width: 155px !important;
   }
 }
 /* End Cast card*/
@@ -486,7 +490,8 @@ ul {
 /* Async Watch Provider */
 .wprovider-content {
   display: inline-block;
-  padding-right: 20px;
+  padding-right: 8px;
+  padding-bottom: 8px;
 }
 
 .wprovider-title {
@@ -601,3 +606,8 @@ ul {
 }
 
 /* End Searchbar */
+
+.react-autosuggest__suggestion-match {
+  color: red !important;
+  font-weight: bold !important;
+}

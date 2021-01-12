@@ -69,6 +69,7 @@ export default class SearchBar extends Component {
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
+        highlightFirstSuggestion={true}
       />
     );
   }

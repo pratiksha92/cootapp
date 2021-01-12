@@ -43,8 +43,8 @@ export default function MovieBar({ movies, category }) {
     infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    swipeToSlide: true,
     variableWidth: true,
+    speed: 200,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };

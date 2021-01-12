@@ -38,48 +38,16 @@ function SamplePrevArrow(props) {
 
 export default function CastBar({ cast, crew }) {
   var settings = {
+    className: "slider variable-width",
     dots: false,
     infinite: false,
-    slidesToShow: 6,
+    slidesToShow: 1,
     slidesToScroll: 1,
     swipeToSlide: true,
+    variableWidth: true,
+    speed: 200,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1224,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-    ],
   };
   return (
     <section className="section">

@@ -11,17 +11,10 @@ body {
   padding: 0;
 }
 
-@media screen and (max-width: 600px) {
-  /* for mobile screen view */
-}
-
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  /* for small screen view */
-}
-
 /* Navbar */
 .navbar-light {
   background: #151414;
+  margin: 0px !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -195,6 +188,22 @@ ul {
   font-weight: 800;
   color: white;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  /* for mobile screen view */
+  .section .movies-center {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  /* for small screen view */
+  .section .movies-center {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
 }
 /* Movie Bar */
 
@@ -606,8 +615,3 @@ ul {
 }
 
 /* End Searchbar */
-
-.react-autosuggest__suggestion-match {
-  color: red !important;
-  font-weight: bold !important;
-}

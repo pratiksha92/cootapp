@@ -95,49 +95,49 @@ export default function AsyncCollections() {
         <AsyncMovies
           genres="35"
           watch_providers={selproviders}
-          movie_collection="Comedy Movies"
+          movie_collection="Comedy"
         ></AsyncMovies>
       </div>
       <div id="adventure">
         <AsyncMovies
           genres="12"
           watch_providers={selproviders}
-          movie_collection="Adventure Movies"
+          movie_collection="Adventure"
         ></AsyncMovies>
       </div>
       <div id="thriller">
         <AsyncMovies
           genres="53"
           watch_providers={selproviders}
-          movie_collection="Thriller Movies"
+          movie_collection="Thriller"
         ></AsyncMovies>
       </div>
       <div id="documentary">
         <AsyncMovies
           genres="99"
           watch_providers={selproviders}
-          movie_collection="Documentary Movies"
+          movie_collection="Documentary"
         ></AsyncMovies>
       </div>
       <div id="crime">
         <AsyncMovies
           genres="80"
           watch_providers={selproviders}
-          movie_collection="Crime Movies"
+          movie_collection="Crime"
         ></AsyncMovies>
       </div>
       <div id="mystery">
         <AsyncMovies
           genres="9648"
           watch_providers={selproviders}
-          movie_collection="Mystery Movies"
+          movie_collection="Mystery"
         ></AsyncMovies>
       </div>
       <div id="WarMovies">
         <AsyncMovies
           genres="10752"
           watch_providers={selproviders}
-          movie_collection="War Movies"
+          movie_collection="War"
         ></AsyncMovies>
       </div>
       <div id="ScienceFiction">

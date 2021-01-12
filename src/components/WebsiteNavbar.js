@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../images/logo1.png";
+import logo from "../images/logo3.png";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 export default class WebsiteNavbar extends Component {
@@ -9,10 +9,8 @@ export default class WebsiteNavbar extends Component {
         <Navbar.Brand href="/">
           <img
             src={logo}
-            width="70"
-            height="70"
             className="d-inline-block align-top"
-            alt="React Bootstrap logo"
+            alt="flickwall"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

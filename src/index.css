@@ -169,14 +169,14 @@ ul {
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
   .moviebar-container {
-    padding: 30px 40px !important;
+    padding: 30px 20px !important;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   /* for small screen view */
   .moviebar-container {
-    padding: 30px 28px !important;
+    padding: 30px 20px !important;
   }
 }
 /* Async Movies */
@@ -196,6 +196,9 @@ ul {
     overflow-x: scroll;
     white-space: nowrap;
   }
+  .section-title {
+    font-size: 20px !important;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -203,6 +206,9 @@ ul {
   .section .movies-center {
     overflow-x: scroll;
     white-space: nowrap;
+  }
+  .section-title {
+    font-size: 20px !important;
   }
 }
 /* Movie Bar */
@@ -597,10 +603,10 @@ ul {
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
   .react-autosuggest__input {
-    width: 80% !important;
+    width: 90% !important;
   }
   .react-autosuggest__suggestions-list {
-    width: 80% !important;
+    width: 90% !important;
   }
 }
 

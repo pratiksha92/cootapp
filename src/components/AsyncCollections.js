@@ -22,7 +22,7 @@ export default function AsyncCollections() {
           "networkproviders",
           tableQuery,
           null,
-          function (error, result, response) {
+          function (error, result) {
             if (error) {
               // Query entities error
               setNetproviders([]);
@@ -38,7 +38,6 @@ export default function AsyncCollections() {
                   };
                 });
                 setNetproviders(newNetproviders);
-                console.log(newNetproviders);
               } else {
                 setNetproviders([]);
               }
@@ -74,19 +73,21 @@ export default function AsyncCollections() {
         >
           {netproviders.map((item) => {
             return (
-              <option value={item.id}>
-                {
-                  <div className="pratiksha">
-                    <img
-                      className="option-image"
-                      alt="example"
-                      src={item.logo}
-                      width="50"
-                      height="50"
-                    />
-                  </div>
-                }
-              </option>
+              <div key={item.id}>
+                <option value={item.id}>
+                  {
+                    <div className="pratiksha">
+                      <img
+                        className="option-image"
+                        alt="example"
+                        src={item.logo}
+                        width="50"
+                        height="50"
+                      />
+                    </div>
+                  }
+                </option>
+              </div>
             );
           })}
         </Select>

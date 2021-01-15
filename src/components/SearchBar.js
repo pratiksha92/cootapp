@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const headers = {
-  "api-key": "E3BEC898888E187D59388EEE072A50CD",
+  "api-key": `${process.env.REACT_APP_SEARCH_API_KEY}`,
 };
 
 const getSuggestionValue = (suggestion) => suggestion.original_title;

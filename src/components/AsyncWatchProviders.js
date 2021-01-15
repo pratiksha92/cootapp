@@ -9,16 +9,17 @@ export default function AsyncWatchProviders({ id }) {
     async function getStreamproviders() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=d5d1c00d59add379b91338c04b5755d7`
+          `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
         );
         const data = await response.json();
         const { flatrate, rent, buy } = data.results.US;
 
         if (flatrate) {
           const newFlatrate = flatrate.map((item) => {
-            const { logo_path } = item;
+            const { logo_path, provider_id } = item;
             return {
               logo_Path: `https://image.tmdb.org//t/p/original/${logo_path}`,
+              flatrateId: `flatrate${provider_id}`,
             };
           });
           setStreamprovider(newFlatrate);
@@ -28,9 +29,10 @@ export default function AsyncWatchProviders({ id }) {
 
         if (rent) {
           const newrent = rent.map((item) => {
-            const { logo_path } = item;
+            const { logo_path, provider_id } = item;
             return {
               logo_Path: `https://image.tmdb.org//t/p/original/${logo_path}`,
+              rentId: `rent${provider_id}`,
             };
           });
           setRentprovider(newrent);
@@ -40,9 +42,10 @@ export default function AsyncWatchProviders({ id }) {
 
         if (buy) {
           const newBuy = buy.map((item) => {
-            const { logo_path } = item;
+            const { logo_path, provider_id } = item;
             return {
               logo_Path: `https://image.tmdb.org//t/p/original/${logo_path}`,
+              buyId: `buy${provider_id}`,
             };
           });
           setBuyprovider(newBuy);
@@ -65,7 +68,7 @@ export default function AsyncWatchProviders({ id }) {
       {isStreamprovider ? (
         streamprovider.map((item) => {
           return (
-            <div className="wprovider-content">
+            <div className="wprovider-content" key={item.flatrateId}>
               <img
                 alt="logo"
                 className="provider-logo"
@@ -87,7 +90,7 @@ export default function AsyncWatchProviders({ id }) {
       {isRentprovider ? (
         rentprovider.map((item) => {
           return (
-            <div className="wprovider-content">
+            <div className="wprovider-content" key={item.rentId}>
               <img
                 alt="logo"
                 className="provider-logo"
@@ -109,7 +112,7 @@ export default function AsyncWatchProviders({ id }) {
       {isBuyprovider ? (
         buyprovider.map((item) => {
           return (
-            <div className="wprovider-content">
+            <div className="wprovider-content" key={item.buyId}>
               <img
                 alt="logo"
                 className="provider-logo"

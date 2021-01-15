@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# [FlickWall](https://www.flickwall.com/) - wall for collection of movies.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses [TMDB](https://www.themoviedb.org/) API for movie search and fetching details for movies.
 
-## Available Scripts
+## FlickWall Architecure Diagram
 
-In the project directory, you can run:
+![Flickwall Architecure Diagram](https://github.com/pratiksha92/cootapp/blob/main/public/flickwall-architecure.jpg)
 
-### `yarn start`
+## Code 
+Client side code is written in react JS and it uses github for source control. Github CI/CD workflow is used to upload build to Azure Static Web APP. API secrets are stored in github secrets and workflow initializes the env variable. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## API
+FlickWall uses TMDB API to discover movies and fetch the movie details. Flickwall also uses search API by Azure to search movies based on movie name. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Site Reliability
+Usage pattern and web performance is pushed to azure insights which is used to monitor performance and improve user experience. Alerts are created to monitor page views.
 
-### `yarn test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Flickwall provides different features to easily discover movies to watch next and on which platform they are available. 
 
-### `yarn build`
+### Trending collection
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Movies which are currently trending on a particular day in the US region. This is the first carousal diplayed on the wall. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Search movies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Search movies uses index built with movies database from TMDB. This uses Azure Search Service to build the index and search using API. 
 
-### `yarn eject`
+### Filter collections based on wathc providers
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Select watch providers and it will filter all collections on the wall based upon selected watch providers. This allows easy experience to search collection for your subscribed watch providers and also allows you to explore collection in new watch provider. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future work
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Future work involves includin TV series in the collection, ability to select region, understand usage pattern using azure application insights and improve the experience. 

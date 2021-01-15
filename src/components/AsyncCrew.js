@@ -25,10 +25,11 @@ export default function AsyncCrew({ url }) {
               return false;
             })
             .map((item) => {
-              const { job, name } = item;
+              const { job, name, credit_id } = item;
               return {
                 name: name,
                 job: job,
+                crewid: credit_id,
               };
             });
           setCrew(newCrew);
@@ -45,7 +46,7 @@ export default function AsyncCrew({ url }) {
     <div className="">
       {crew.map((item) => {
         return (
-          <div className="crewheader">
+          <div className="crewheader" key={item.crewid}>
             <div className="crewcontent">
               <h3 className="crewname">{item.name}</h3>
               <p className="crewjob">{item.job}</p>

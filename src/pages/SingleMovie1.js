@@ -8,16 +8,16 @@ import AsyncWatchProviders from "../components/AsyncWatchProviders";
 import AsyncRecommendation from "../components/AsyncRecommendation";
 
 export default function SingleMovie1() {
-  const { id } = useParams();
+  let { id } = useParams();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     async function getMovie() {
       try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=d5d1c00d59add379b91338c04b5755d7&language=en-US
-`);
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
+        );
         const data = await response.json();
-        console.log(data);
         if (data) {
           const {
             poster_path: image,
@@ -61,7 +61,7 @@ export default function SingleMovie1() {
       background_image,
       genres,
     } = movie;
-    console.log(genres);
+
     return (
       <div className="singlemovie-container">
         <WebsiteNavbar></WebsiteNavbar>
@@ -92,12 +92,14 @@ export default function SingleMovie1() {
                             <h3 className="singlemovie-title">{title}</h3>
                             <div className="singlemovie-subtitle">
                               <span className="">{date}</span>
-                              <span className="bullet"></span>
+                              <div className="bullet"></div>
                               <p>
                                 {genres ? (
-                                  genres.map((item, index) => {
+                                  genres.map((item) => {
                                     return (
-                                      <span className="comma">{item.name}</span>
+                                      <span className="comma" key={item.id}>
+                                        {item.name}
+                                      </span>
                                     );
                                   })
                                 ) : (
@@ -113,7 +115,7 @@ export default function SingleMovie1() {
                                 <p>{overview}</p>
                               </div>
                               <AsynCrew
-                                url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=d5d1c00d59add379b91338c04b5755d7&language=en-US`}
+                                url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
                               ></AsynCrew>
                               <AsyncWatchProviders
                                 id={`${id}`}
@@ -131,7 +133,7 @@ export default function SingleMovie1() {
         </div>
         <div className="movie-media">
           <AsyncCast
-            url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=d5d1c00d59add379b91338c04b5755d7&language=en-US`}
+            url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
           ></AsyncCast>
           <AsyncRecommendation
             id={id}

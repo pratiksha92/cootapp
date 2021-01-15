@@ -8,7 +8,7 @@ export default function AsyncRecommendation({ id }) {
     async function getMovies() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=d5d1c00d59add379b91338c04b5755d7&language=en-US&page=1`
+          `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&page=1`
         );
         const data = await response.json();
         const { results } = data;

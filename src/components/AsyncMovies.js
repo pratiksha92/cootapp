@@ -13,7 +13,7 @@ export default function AsyncMovies({
     async function getMovies() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/discover/movie?api_key=d5d1c00d59add379b91338c04b5755d7&language=en-US&region=US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genres}&with_watch_providers=${watch_providers}&watch_region=US`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&region=US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genres}&with_watch_providers=${watch_providers}&watch_region=US`
         );
         const data = await response.json();
         const { results } = data;

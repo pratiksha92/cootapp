@@ -40,9 +40,17 @@ export default function AsyncRecommendation({ id }) {
     }
     getMovies();
   }, [id]);
+
+  const isMovies = movies.length > 0;
   return (
-    <div className="moviebar-container">
-      <MovieBar movies={movies} category="You may also like"></MovieBar>
+    <div>
+      {isMovies ? (
+        <div className="moviebar-container">
+          <MovieBar movies={movies} category="You may also like"></MovieBar>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

@@ -57,7 +57,6 @@ export default function AsyncCollections() {
       fvalue = fvalue.concat(value[i]).concat("|");
     }
     setSelproviders(fvalue);
-    console.log(fvalue);
   }
 
   return (
@@ -73,21 +72,19 @@ export default function AsyncCollections() {
         >
           {netproviders.map((item) => {
             return (
-              <div key={item.id}>
-                <option value={item.id}>
-                  {
-                    <div className="pratiksha">
-                      <img
-                        className="option-image"
-                        alt="example"
-                        src={item.logo}
-                        width="50"
-                        height="50"
-                      />
-                    </div>
-                  }
-                </option>
-              </div>
+              <option value={item.id} key={item.id}>
+                {
+                  <div className="pratiksha">
+                    <img
+                      className="option-image"
+                      alt="example"
+                      src={item.logo}
+                      width="50"
+                      height="50"
+                    />
+                  </div>
+                }
+              </option>
             );
           })}
         </Select>

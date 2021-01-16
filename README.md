@@ -27,7 +27,7 @@ Movies which are currently trending on a particular day in the US region. This i
 
 Search movies uses index built with movies database from TMDB. This uses Azure Search Service to build the index and search using API. 
 
-### Filter collections based on wathc providers
+### Filter collections based on watch providers
 
 Select watch providers and it will filter all collections on the wall based upon selected watch providers. This allows easy experience to search collection for your subscribed watch providers and also allows you to explore collection in new watch provider. 
 

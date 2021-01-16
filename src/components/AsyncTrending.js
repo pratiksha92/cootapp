@@ -10,7 +10,6 @@ export default function AsyncTrending() {
         const response = await fetch(
           `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
         );
-        console.log(response);
         const data = await response.json();
         const { results } = data;
 

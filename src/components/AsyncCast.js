@@ -38,9 +38,17 @@ export default function AsyncCast({ url }) {
     }
     getCasts();
   }, [url]);
+
+  const isCast = casts.length > 0;
   return (
-    <div className="moviebar-container">
-      <CastBar cast={casts}></CastBar>
+    <div>
+      {isCast ? (
+        <div className="moviebar-container">
+          <CastBar cast={casts}></CastBar>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

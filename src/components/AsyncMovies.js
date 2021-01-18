@@ -47,7 +47,7 @@ export default function AsyncMovies({
       }
     }
     getMovies();
-  }, [genres, movie_collection, watch_providers]);
+  }, [genres, movie_collection, watch_providers, keywords]);
   return (
     <div className="moviebar-container">
       <MovieBar movies={movies} category={category}></MovieBar>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MovieBar from "../components/MovieBar";
 
-export default function AsyncRecommendation({ id }) {
+export default function AsyncRecommendation({ id, name }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -43,13 +43,16 @@ export default function AsyncRecommendation({ id }) {
 
   const isMovies = movies.length > 0;
   return (
-    <div>
+    <div className="moviebar-container">
       {isMovies ? (
-        <div className="moviebar-container">
+        <div>
           <MovieBar movies={movies} category="You may also like"></MovieBar>
         </div>
       ) : (
-        <div></div>
+        <div style={{ color: "white" }}>
+          <h3 className="section-title">You may also like</h3>
+          No We don't have enough data to recommmend any movies based on {name}
+        </div>
       )}
     </div>
   );

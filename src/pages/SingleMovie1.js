@@ -27,6 +27,8 @@ export default function SingleMovie1() {
             runtime,
             backdrop_path: background_image,
             genres,
+            status,
+            original_language,
           } = data;
 
           const newMovie = {
@@ -37,6 +39,8 @@ export default function SingleMovie1() {
             runtime,
             background_image,
             genres,
+            status,
+            original_language,
           };
           setMovie(newMovie);
         } else {
@@ -60,6 +64,8 @@ export default function SingleMovie1() {
       runtime,
       background_image,
       genres,
+      status,
+      original_language,
     } = movie;
 
     return (
@@ -132,11 +138,28 @@ export default function SingleMovie1() {
           </div>
         </div>
         <div className="movie-media">
-          <AsyncCast
-            url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
-          ></AsyncCast>
+          <div className="row">
+            <div className="col-lg-10">
+              <AsyncCast
+                url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
+              ></AsyncCast>
+            </div>
+            <div className="col-lg-2">
+              <div className="movie-status">
+                <div className="">
+                  <h5 className="movie-status-heading">Status</h5>
+                  <p className="movie-status-subheading">{status}</p>
+                </div>
+                <div className="">
+                  <h5 className="movie-status-heading">Original Language</h5>
+                  <p className="movie-status-subheading">{original_language}</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <AsyncRecommendation
             id={id}
+            name={title}
             movie_collection="You may also like"
           ></AsyncRecommendation>
         </div>

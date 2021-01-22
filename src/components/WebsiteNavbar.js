@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "../images/logo3.png";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+//import AsyncCollections from "../components/AsyncCollections";
 
 export default class WebsiteNavbar extends Component {
   render() {

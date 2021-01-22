@@ -41,13 +41,16 @@ export default function AsyncCast({ url }) {
 
   const isCast = casts.length > 0;
   return (
-    <div>
+    <div className="moviebar-container">
       {isCast ? (
-        <div className="moviebar-container">
+        <div>
           <CastBar cast={casts}></CastBar>
         </div>
       ) : (
-        <div></div>
+        <div style={{ color: "white" }}>
+          <h3 className="section-title">Cast</h3>
+          No We don't have enough data to show the cast of this movie
+        </div>
       )}
     </div>
   );

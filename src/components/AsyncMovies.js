@@ -6,6 +6,7 @@ export default function AsyncMovies({
   movie_collection,
   watch_providers,
   keywords,
+  region,
 }) {
   const [movies, setMovies] = useState([]);
   const [category, setcategory] = useState("");
@@ -14,7 +15,7 @@ export default function AsyncMovies({
     async function getMovies() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&region=US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genres}&with_watch_providers=${watch_providers}&watch_region=US&with_keywords=${keywords}`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&region=${region}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genres}&with_watch_providers=${watch_providers}&watch_region=US&with_keywords=${keywords}`
         );
         const data = await response.json();
         const { results } = data;
@@ -47,10 +48,18 @@ export default function AsyncMovies({
       }
     }
     getMovies();
-  }, [genres, movie_collection, watch_providers, keywords]);
+  }, [genres, movie_collection, watch_providers, keywords, region]);
+
+  const isgetMovies = movies.length > 0;
   return (
-    <div className="moviebar-container">
-      <MovieBar movies={movies} category={category}></MovieBar>
+    <div>
+      {isgetMovies ? (
+        <div className="moviebar-container">
+          <MovieBar movies={movies} category={category}></MovieBar>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

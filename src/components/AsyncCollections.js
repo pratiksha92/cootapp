@@ -6,6 +6,7 @@ import { Select } from "antd";
 export default function AsyncCollections() {
   const [netproviders, setNetproviders] = useState([]);
   const [selproviders, setSelproviders] = useState("");
+  const [region, setRegion] = useState([]);
 
   useEffect(() => {
     async function getNetproviders() {
@@ -59,35 +60,60 @@ export default function AsyncCollections() {
     setSelproviders(fvalue);
   }
 
+  function handleRegion(value) {
+    console.log(value);
+    setRegion(value);
+  }
+
   return (
     <div className="asyncollection" id="searchmovies">
       <div className="moviebar-container">
-        <h3 className="section-title">Movies for You</h3>{" "}
-        <Select
-          mode="multiple"
-          style={{ width: "100%" }}
-          placeholder="Select your network"
-          defaultValue={[]}
-          onChange={handleChange}
-        >
-          {netproviders.map((item) => {
-            return (
-              <option value={item.id} key={item.id}>
-                {
-                  <div className="pratiksha">
-                    <img
-                      className="option-image"
-                      alt="example"
-                      src={item.logo}
-                      width="50"
-                      height="50"
-                    />
-                  </div>
-                }
-              </option>
-            );
-          })}
-        </Select>
+        <div className="row">
+          <div className="col-lg-7">
+            <h3 className="section-title">Movies for You</h3>{" "}
+            <Select
+              mode="multiple"
+              style={{ width: "100%" }}
+              placeholder="Select your network"
+              defaultValue={[]}
+              onChange={handleChange}
+            >
+              {netproviders.map((item) => {
+                return (
+                  <option value={item.id} key={item.id}>
+                    {
+                      <div className="pratiksha">
+                        <img
+                          className="option-image"
+                          alt="example"
+                          src={item.logo}
+                          width="50"
+                          height="50"
+                        />
+                      </div>
+                    }
+                  </option>
+                );
+              })}
+            </Select>
+          </div>
+          <div className="col-lg-5">
+            <h3 className="section-title">Select Region</h3>{" "}
+            <Select
+              style={{ width: "100%" }}
+              placeholder="Select your region"
+              defaultValue={[]}
+              onChange={handleRegion}
+            >
+              <option value="CA">CA</option>
+              <option value="US">US</option>
+              <option value="IN">IN</option>
+              <option value="AR">AR</option>
+              <option value="AT">AT</option>
+              <option value="AU">AU</option>
+            </Select>
+          </div>
+        </div>
       </div>
       <div id="martin">
         <AsyncMovies
@@ -95,6 +121,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="MLK Inspiration"
           keywords="5835"
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="politics">
@@ -103,6 +130,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="the American president"
           keywords="8570"
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="comedy">
@@ -111,6 +139,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Comedy"
           keywords=""
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="adventure">
@@ -119,6 +148,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Adventure"
           keywords=""
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="thriller">
@@ -127,6 +157,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Thriller"
           keywords=""
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="documentary">
@@ -135,6 +166,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Documentary"
           keywords=""
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="crime">
@@ -143,6 +175,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Crime"
           keywords=""
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="mystery">
@@ -151,6 +184,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Mystery"
           keywords=""
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="ScienceFiction">
@@ -159,6 +193,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Science Fiction"
           keywords=""
+          region={region}
         ></AsyncMovies>
       </div>
       <div id="Horror">
@@ -167,6 +202,7 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Horror"
           keywords=""
+          region={region}
         ></AsyncMovies>
       </div>
     </div>

@@ -183,7 +183,7 @@ ul {
 
 /* Movie Bar */
 .section-title {
-  margin-bottom: 20px;
+  margin: 20px 0px 20px 0px;
   font-size: 23px;
   font-weight: 800;
   color: white;
@@ -360,6 +360,23 @@ ul {
   background-color: black;
 }
 
+.movie-media .movie-status {
+  color: white;
+  padding: 80px 0px;
+}
+
+.movie-media .movie-status-heading {
+  color: white !important;
+  margin-bottom: 3px;
+  font-size: 18px;
+}
+
+.movie-status-subheading {
+  color: #e2dfdff5;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
   .jumbotron {
@@ -402,11 +419,6 @@ ul {
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   /* for tablet screen view */
-  /*.container,
-  .container-md,
-  .container-sm {
-    width: 100% !important;
-  }*/
 
   .singlemovieimage-box__content {
     margin: 0 !important;
@@ -535,8 +547,15 @@ ul {
   color: white !important;
 }
 .asyncollection .ant-select {
-  width: 40% !important;
+  width: 80% !important;
 }
+
+.asyncollection
+  .ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  color: white !important;
+}
+
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
   .asyncollection .ant-select {

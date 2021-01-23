@@ -34,3 +34,6 @@ Select watch providers and it will filter all collections on the wall based upon
 ## Future work
 
 Future work involves includin TV series in the collection, ability to select region, understand usage pattern using azure application insights and improve the experience. 
+
+### Tech blog:
+https://pratikshabhangdiya.medium.com/setup-root-level-custom-domain-for-azure-static-web-app-preview-5a110d1364de

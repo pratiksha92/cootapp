@@ -37,3 +37,4 @@ Future work involves includin TV series in the collection, ability to select reg
 
 ## Tech blog
 https://pratikshabhangdiya.medium.com/setup-root-level-custom-domain-for-azure-static-web-app-preview-5a110d1364de
+https://pratikshabhangdiya.medium.com/auto-suggest-search-bar-in-react-js-12667dc6ae57

@@ -8,7 +8,7 @@ import AsyncWatchProviders from "../components/AsyncWatchProviders";
 import AsyncRecommendation from "../components/AsyncRecommendation";
 
 export default function SingleMovie1() {
-  let { id } = useParams();
+  let { id, region } = useParams();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -125,6 +125,7 @@ export default function SingleMovie1() {
                               ></AsynCrew>
                               <AsyncWatchProviders
                                 id={`${id}`}
+                                region={`${region}`}
                               ></AsyncWatchProviders>
                             </div>
                           </div>
@@ -138,19 +139,18 @@ export default function SingleMovie1() {
           </div>
         </div>
         <div className="movie-media">
-          <div className="row">
-            <div className="col-lg-10">
-              <AsyncCast
-                url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
-              ></AsyncCast>
-            </div>
-            <div className="col-lg-2">
-              <div className="movie-status">
-                <div className="">
+          <div className="castbar-container">
+            <div className="row">
+              <div className="col-lg-9">
+                <AsyncCast
+                  url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
+                ></AsyncCast>
+              </div>
+              <div className="col-lg-1"></div>
+              <div className="col-lg-2">
+                <div className="movie-status">
                   <h5 className="movie-status-heading">Status</h5>
                   <p className="movie-status-subheading">{status}</p>
-                </div>
-                <div className="">
                   <h5 className="movie-status-heading">Original Language</h5>
                   <p className="movie-status-subheading">{original_language}</p>
                 </div>

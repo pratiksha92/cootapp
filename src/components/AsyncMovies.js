@@ -35,6 +35,7 @@ export default function AsyncMovies({
                 id: id,
                 name: title,
                 image: `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`,
+                region: region,
               };
             });
           setMovies(newMovies);

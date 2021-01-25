@@ -41,7 +41,7 @@ export default function AsyncCast({ url }) {
 
   const isCast = casts.length > 0;
   return (
-    <div className="moviebar-container">
+    <div className="">
       {isCast ? (
         <div>
           <CastBar cast={casts}></CastBar>

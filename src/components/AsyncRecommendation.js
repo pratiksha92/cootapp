@@ -51,7 +51,7 @@ export default function AsyncRecommendation({ id, name }) {
       ) : (
         <div style={{ color: "white" }}>
           <h3 className="section-title">You may also like</h3>
-          No We don't have enough data to recommmend any movies based on {name}
+          We don't have enough data to recommmend any movies based on {name}
         </div>
       )}
     </div>

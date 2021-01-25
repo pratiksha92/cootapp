@@ -6,7 +6,7 @@ import { Select } from "antd";
 export default function AsyncCollections() {
   const [netproviders, setNetproviders] = useState([]);
   const [selproviders, setSelproviders] = useState("");
-  const [region, setRegion] = useState([]);
+  const [region, setRegion] = useState("US");
 
   useEffect(() => {
     async function getNetproviders() {
@@ -102,7 +102,7 @@ export default function AsyncCollections() {
             <Select
               style={{ width: "100%" }}
               placeholder="Select your region"
-              defaultValue={[]}
+              defaultValue={"US"}
               onChange={handleRegion}
             >
               <option value="CA">CA</option>

@@ -36,7 +36,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function CastBar({ cast, crew }) {
+export default function CastBar({ cast }) {
   var settings = {
     className: "slider variable-width",
     dots: false,

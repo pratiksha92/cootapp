@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "antd/dist/antd.css";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import LazyLoad from "react-lazyload";
+import { Skeleton } from "antd";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -49,15 +51,17 @@ export default function MovieBar({ movies, category }) {
     prevArrow: <SamplePrevArrow />,
   };
   return (
-    <section className="section">
-      <h2 className="section-title"> {category}</h2>
-      <div className="movies-center">
-        <Slider {...settings}>
-          {movies.map((item) => {
-            return <MovieCard key={item.id} {...item}></MovieCard>;
-          })}
-        </Slider>
-      </div>
-    </section>
+    <LazyLoad once={true} placeholder={<Skeleton active></Skeleton>}>
+      <section className="section">
+        <h2 className="section-title"> {category}</h2>
+        <div className="movies-center">
+          <Slider {...settings}>
+            {movies.map((item) => {
+              return <MovieCard key={item.id} {...item}></MovieCard>;
+            })}
+          </Slider>
+        </div>
+      </section>
+    </LazyLoad>
   );
 }

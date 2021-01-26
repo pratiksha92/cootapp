@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MovieBar from "../components/MovieBar";
 
-export default function AsyncRecommendation({ id, name }) {
+export default function AsyncRecommendation({ id, name, region }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -28,6 +28,7 @@ export default function AsyncRecommendation({ id, name }) {
                 id: id,
                 name: title,
                 image: `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`,
+                region: region,
               };
             });
           setMovies(newMovies);
@@ -39,7 +40,7 @@ export default function AsyncRecommendation({ id, name }) {
       }
     }
     getMovies();
-  }, [id]);
+  }, [id, region]);
 
   const isMovies = movies.length > 0;
   return (

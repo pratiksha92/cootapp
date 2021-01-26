@@ -161,6 +161,7 @@ export default function SingleMovie1() {
             id={id}
             name={title}
             movie_collection="You may also like"
+            region={region}
           ></AsyncRecommendation>
         </div>
         <WebFooter></WebFooter>

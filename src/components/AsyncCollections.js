@@ -115,24 +115,7 @@ export default function AsyncCollections() {
           </div>
         </div>
       </div>
-      <div id="martin">
-        <AsyncMovies
-          genres=""
-          watch_providers={selproviders}
-          movie_collection="MLK Inspiration"
-          keywords="5835"
-          region={region}
-        ></AsyncMovies>
-      </div>
-      <div id="politics">
-        <AsyncMovies
-          genres=""
-          watch_providers={selproviders}
-          movie_collection="the American president"
-          keywords="8570"
-          region={region}
-        ></AsyncMovies>
-      </div>
+
       <div id="comedy">
         <AsyncMovies
           genres="35"
@@ -142,12 +125,57 @@ export default function AsyncCollections() {
           region={region}
         ></AsyncMovies>
       </div>
+      <div id="ffriendhip">
+        <AsyncMovies
+          genres=""
+          watch_providers={selproviders}
+          movie_collection="Female Friendship"
+          keywords="5248"
+          region={region}
+        ></AsyncMovies>
+      </div>
       <div id="adventure">
         <AsyncMovies
           genres="12"
           watch_providers={selproviders}
           movie_collection="Adventure"
           keywords=""
+          region={region}
+        ></AsyncMovies>
+      </div>
+      <div id="romance">
+        <AsyncMovies
+          genres=""
+          watch_providers={selproviders}
+          movie_collection="Romance"
+          keywords="9840"
+          region={region}
+        ></AsyncMovies>
+      </div>
+      <div id="teen-movies">
+        <AsyncMovies
+          genres=""
+          watch_providers={selproviders}
+          movie_collection="Teen movies"
+          keywords="11870"
+          region={region}
+        ></AsyncMovies>
+      </div>
+      <div id="rom-com">
+        <AsyncMovies
+          genres="9799"
+          watch_providers={selproviders}
+          movie_collection="Rom-Com"
+          keywords=""
+          region={region}
+        ></AsyncMovies>
+      </div>
+      <div id="biography">
+        <AsyncMovies
+          genres="12"
+          watch_providers={selproviders}
+          movie_collection="Biography"
+          keywords="5565"
           region={region}
         ></AsyncMovies>
       </div>
@@ -173,7 +201,7 @@ export default function AsyncCollections() {
         <AsyncMovies
           genres="80"
           watch_providers={selproviders}
-          movie_collection="Crime"
+          movie_collection="Crime scenes"
           keywords=""
           region={region}
         ></AsyncMovies>
@@ -202,6 +230,24 @@ export default function AsyncCollections() {
           watch_providers={selproviders}
           movie_collection="Horror"
           keywords=""
+          region={region}
+        ></AsyncMovies>
+      </div>
+      <div id="martin">
+        <AsyncMovies
+          genres=""
+          watch_providers={selproviders}
+          movie_collection="MLK Inspiration"
+          keywords="5835"
+          region={region}
+        ></AsyncMovies>
+      </div>
+      <div id="politics">
+        <AsyncMovies
+          genres=""
+          watch_providers={selproviders}
+          movie_collection="the American president"
+          keywords="8570"
           region={region}
         ></AsyncMovies>
       </div>

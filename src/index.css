@@ -163,20 +163,20 @@ ul {
 
 /* Async Movies */
 .moviebar-container {
-  padding: 30px 80px;
+  padding: 12px 80px;
 }
 
 @media screen and (max-width: 600px) {
   /* for mobile screen view */
   .moviebar-container {
-    padding: 30px 20px !important;
+    padding: 12px 20px !important;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   /* for small screen view */
   .moviebar-container {
-    padding: 30px 20px !important;
+    padding: 12px 20px !important;
   }
 }
 /* Async Movies */
@@ -657,5 +657,4 @@ ul {
     width: 80% !important;
   }
 }
-
 /* End Searchbar */

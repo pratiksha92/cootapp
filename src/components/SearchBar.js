@@ -13,7 +13,7 @@ const getSuggestionValue = (suggestion) => suggestion.original_title;
 const renderSuggestion = (suggestion) => (
   <div>
     {" "}
-    <Link to={`/movie/${suggestion.id}`} className="render-suggest">
+    <Link to={`/movie/${suggestion.id}/US`} className="render-suggest">
       {suggestion.original_title}
     </Link>
   </div>

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import MovieBar from "../components/MovieBar";
 
-export default function AsyncRecommendation({ id, name, region }) {
+export default function AsyncRecommendation({ id, name, region, media_type }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     async function getMovies() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&page=1`
+          `https://api.themoviedb.org/3/${media_type}/${id}/recommendations?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&page=1`
         );
         const data = await response.json();
         const { results } = data;
@@ -29,6 +29,7 @@ export default function AsyncRecommendation({ id, name, region }) {
                 name: title,
                 image: `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`,
                 region: region,
+                media_type: media_type,
               };
             });
           setMovies(newMovies);
@@ -40,7 +41,7 @@ export default function AsyncRecommendation({ id, name, region }) {
       }
     }
     getMovies();
-  }, [id, region]);
+  }, [id, region, media_type]);
 
   const isMovies = movies.length > 0;
   return (

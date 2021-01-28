@@ -49,7 +49,7 @@ export default function AsyncCast({ url }) {
       ) : (
         <div style={{ color: "white" }}>
           <h3 className="section-title">Cast</h3>
-          No We don't have enough data to show the cast of this movie
+          We don't have enough data to show the cast of this movie
         </div>
       )}
     </div>

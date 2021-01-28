@@ -8,14 +8,14 @@ import AsyncWatchProviders from "../components/AsyncWatchProviders";
 import AsyncRecommendation from "../components/AsyncRecommendation";
 
 export default function SingleMovie1() {
-  let { id, region } = useParams();
+  let { id, region, media_type } = useParams();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     async function getMovie() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
+          `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
         );
         const data = await response.json();
         if (data) {
@@ -29,6 +29,9 @@ export default function SingleMovie1() {
             genres,
             status,
             original_language,
+            original_name,
+            number_of_seasons,
+            number_of_episodes,
           } = data;
 
           const newMovie = {
@@ -41,6 +44,9 @@ export default function SingleMovie1() {
             genres,
             status,
             original_language,
+            original_name,
+            number_of_seasons,
+            number_of_episodes,
           };
           setMovie(newMovie);
         } else {
@@ -51,7 +57,7 @@ export default function SingleMovie1() {
       }
     }
     getMovie();
-  }, [id]);
+  }, [id, media_type]);
 
   if (!movie) {
     return <h2 className="section-title">No movie to display</h2>;
@@ -66,6 +72,9 @@ export default function SingleMovie1() {
       genres,
       status,
       original_language,
+      original_name,
+      number_of_seasons,
+      number_of_episodes,
     } = movie;
 
     return (
@@ -95,7 +104,10 @@ export default function SingleMovie1() {
                         </div>
                         <div className="singlemoviebox-text">
                           <div className="wrap">
-                            <h3 className="singlemovie-title">{title}</h3>
+                            <h3 className="singlemovie-title">
+                              {title}
+                              {original_name}
+                            </h3>
                             <div className="singlemovie-subtitle">
                               <span className="">{date}</span>
                               <div className="bullet"></div>
@@ -112,8 +124,14 @@ export default function SingleMovie1() {
                                   <div></div>
                                 )}
                               </p>
-                              <span className="bullet"></span>
-                              <span>{runtime} min</span>
+                              {runtime ? (
+                                <>
+                                  <span className="bullet"></span>
+                                  <span>{runtime} min</span>
+                                </>
+                              ) : (
+                                <span></span>
+                              )}
                             </div>
                             <div className="singlemovieheader-info">
                               <h3>Overview</h3>
@@ -121,11 +139,12 @@ export default function SingleMovie1() {
                                 <p>{overview}</p>
                               </div>
                               <AsynCrew
-                                url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
+                                url={`https://api.themoviedb.org/3/${media_type}/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
                               ></AsynCrew>
                               <AsyncWatchProviders
                                 id={`${id}`}
                                 region={`${region}`}
+                                media_type={`${media_type}`}
                               ></AsyncWatchProviders>
                             </div>
                           </div>
@@ -143,7 +162,7 @@ export default function SingleMovie1() {
             <div className="row">
               <div className="col-lg-9">
                 <AsyncCast
-                  url={`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
+                  url={`https://api.themoviedb.org/3/${media_type}/${id}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`}
                 ></AsyncCast>
               </div>
               <div className="col-lg-1"></div>
@@ -153,6 +172,30 @@ export default function SingleMovie1() {
                   <p className="movie-status-subheading">{status}</p>
                   <h5 className="movie-status-heading">Original Language</h5>
                   <p className="movie-status-subheading">{original_language}</p>
+                  <div className="total-seasons">
+                    {number_of_seasons ? (
+                      <>
+                        <h5 className="movie-status-heading">Total Seasons</h5>
+                        <p className="movie-status-subheading">
+                          {number_of_seasons}
+                        </p>
+                      </>
+                    ) : (
+                      <div></div>
+                    )}
+                  </div>
+                  <div className="total-seasons">
+                    {number_of_episodes ? (
+                      <>
+                        <h5 className="movie-status-heading">Total Episodes</h5>
+                        <p className="movie-status-subheading">
+                          {number_of_episodes}
+                        </p>
+                      </>
+                    ) : (
+                      <div></div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -162,6 +205,7 @@ export default function SingleMovie1() {
             name={title}
             movie_collection="You may also like"
             region={region}
+            media_type={media_type}
           ></AsyncRecommendation>
         </div>
         <WebFooter></WebFooter>

@@ -13,7 +13,7 @@ body {
 
 /* Navbar */
 .navbar-light {
-  background: #151414;
+  background: rgb(29, 29, 29);
   margin: 0px !important;
 }
 
@@ -552,6 +552,7 @@ ul {
   border: none !important;
   padding: 8px 4px 0 8px !important;
 }
+
 .asyncollection
   .ant-select:not(.ant-select-customize-input)
   .ant-select-selector {
@@ -559,12 +560,15 @@ ul {
   border: 2px solid #d9d9d9 !important;
   border-radius: 12px !important;
 }
+
 .asyncollection .ant-select-selection-placeholder {
   color: white !important;
 }
+
 .asyncollection .ant-select-multiple .ant-select-selection-item-remove {
   color: white !important;
 }
+
 .asyncollection .ant-select {
   width: 80% !important;
 }
@@ -574,90 +578,6 @@ ul {
   .ant-select-selector {
   color: white !important;
 }
-
-@media screen and (max-width: 600px) {
-  /* for mobile screen view */
-  .asyncollection .ant-select {
-    width: 100% !important;
-  }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  /* for small screen view */
-  .asyncollection .ant-select {
-    width: 100% !important;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  /* for tablet screen view */
-  .ant-select {
-    width: 100% !important;
-  }
-}
-/* End Async Collection */
-
-/* Searchbar */
-.section-searchbar {
-  margin: auto;
-  text-align: center;
-  padding-top: 40px;
-  background-color: black !important;
-}
-
-.react-autosuggest__input {
-  width: 40% !important;
-  color: white !important;
-  background-color: black !important;
-  border: 1px solid white !important;
-  border-radius: 5px !important;
-  padding: 8px !important;
-  box-sizing: border-box !important;
-}
-
-.section-searchbar ul {
-  list-style-type: none;
-}
-
-.react-autosuggest__suggestions-list {
-  color: white !important;
-  text-align: start !important;
-  width: 40% !important;
-  margin: auto !important;
-  border: 1px solid white;
-  border-top: none;
-  padding: 10px;
-}
-
-.render-suggest {
-  color: white !important;
-}
-.section-searchbar ul li:hover,
-.section-searchbar ul li:hover a {
-  color: #44b247 !important;
-  text-decoration: none !important;
-}
-
-@media screen and (max-width: 600px) {
-  /* for mobile screen view */
-  .react-autosuggest__input {
-    width: 90% !important;
-  }
-  .react-autosuggest__suggestions-list {
-    width: 90% !important;
-  }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  /* for small screen view */
-  .react-autosuggest__input {
-    width: 80% !important;
-  }
-  .react-autosuggest__suggestions-list {
-    width: 80% !important;
-  }
-}
-/* End Searchbar */
 
 .switch-container {
   display: table-cell;
@@ -765,3 +685,87 @@ label {
 .btn-color-mode-switch input[type="checkbox"]:checked ~ .alert {
   display: block;
 }
+
+@media screen and (max-width: 600px) {
+  /* for mobile screen view */
+  .asyncollection .ant-select {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  /* for small screen view */
+  .asyncollection .ant-select {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  /* for tablet screen view */
+  .ant-select {
+    width: 100% !important;
+  }
+}
+/* End Async Collection */
+
+/* Searchbar */
+.section-searchbar {
+  margin: auto;
+  text-align: center;
+  padding-top: 40px;
+  background-color: black !important;
+}
+
+.react-autosuggest__input {
+  width: 40% !important;
+  color: white !important;
+  background-color: black !important;
+  border: 1px solid white !important;
+  border-radius: 5px !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.section-searchbar ul {
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestions-list {
+  color: white !important;
+  text-align: start !important;
+  width: 40% !important;
+  margin: auto !important;
+  border: 1px solid white;
+  border-top: none;
+  padding: 10px;
+}
+
+.render-suggest {
+  color: white !important;
+}
+.section-searchbar ul li:hover,
+.section-searchbar ul li:hover a {
+  color: #44b247 !important;
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 600px) {
+  /* for mobile screen view */
+  .react-autosuggest__input {
+    width: 90% !important;
+  }
+  .react-autosuggest__suggestions-list {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  /* for small screen view */
+  .react-autosuggest__input {
+    width: 80% !important;
+  }
+  .react-autosuggest__suggestions-list {
+    width: 80% !important;
+  }
+}
+/* End Searchbar */

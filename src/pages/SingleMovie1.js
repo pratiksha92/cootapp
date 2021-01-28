@@ -57,6 +57,7 @@ export default function SingleMovie1() {
       }
     }
     getMovie();
+    window.scrollTo(0, 0);
   }, [id, media_type]);
 
   if (!movie) {

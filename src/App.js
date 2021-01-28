@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/">
           <Home></Home>
         </Route>
-        <Route path="/movie/:id/:region">
+        <Route path="/:media_type/:id/:region">
           <SingleMovie1></SingleMovie1>
         </Route>
         <Route path="*">

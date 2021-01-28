@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default class WebFooter extends Component {
@@ -18,7 +18,7 @@ export default class WebFooter extends Component {
                     <p className="name">Pratiksha Bhangdiya</p>
                   </div>
                   <div className="footer-social-icon">
-                    <span>Follow us</span>
+                    <span>Follow</span>
                     <a
                       href="https://www.linkedin.com/in/pratiksha-bhangdiya-886356129/"
                       target="_blank"
@@ -27,11 +27,11 @@ export default class WebFooter extends Component {
                       <FaLinkedinIn className="fab fa-linkedin linkedin-bg"></FaLinkedinIn>
                     </a>
                     <a
-                      href="https://www.facebook.com/pratiksha.somani2"
+                      href="https://pratikshabhangdiya.medium.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaFacebookF className="fab fa-facebook facebook-bg"></FaFacebookF>
+                      <FaMediumM className="fab fa-facebook facebook-bg"></FaMediumM>
                     </a>
                     <a
                       href="https://github.com/pratiksha92"

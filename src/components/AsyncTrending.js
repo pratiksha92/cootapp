@@ -29,6 +29,7 @@ export default function AsyncTrending() {
                 name: title,
                 image: `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`,
                 region: "US",
+                media_type: "movie",
               };
             });
           setMovies(newMovies);

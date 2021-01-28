@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function AsyncWatchProviders({ id, region }) {
+export default function AsyncWatchProviders({ id, region, media_type }) {
   const [streamprovider, setStreamprovider] = useState([]);
   const [rentprovider, setRentprovider] = useState([]);
   const [buyprovider, setBuyprovider] = useState([]);
@@ -9,7 +9,7 @@ export default function AsyncWatchProviders({ id, region }) {
     async function getStreamproviders() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
+          `https://api.themoviedb.org/3/${media_type}/${id}/watch/providers?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
         );
         const data = await response.json();
         const { flatrate, rent, buy } = data.results[`${region}`];
@@ -57,7 +57,7 @@ export default function AsyncWatchProviders({ id, region }) {
       }
     }
     getStreamproviders();
-  }, [id, region]);
+  }, [id, region, media_type]);
 
   const isStreamprovider = streamprovider.length > 0;
   const isRentprovider = rentprovider.length > 0;

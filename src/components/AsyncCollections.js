@@ -7,6 +7,7 @@ export default function AsyncCollections() {
   const [netproviders, setNetproviders] = useState([]);
   const [selproviders, setSelproviders] = useState("");
   const [region, setRegion] = useState("US");
+  const [mediaType, SetMediaType] = useState("movie");
 
   useEffect(() => {
     async function getNetproviders() {
@@ -61,16 +62,45 @@ export default function AsyncCollections() {
   }
 
   function handleRegion(value) {
-    console.log(value);
     setRegion(value);
+  }
+
+  function handleMediaChange(value) {
+    if (value.target.checked === true) {
+      SetMediaType("tv");
+    } else {
+      SetMediaType("movie");
+    }
   }
 
   return (
     <div className="asyncollection" id="searchmovies">
       <div className="moviebar-container">
         <div className="row">
+          <div className="col-lg-2">
+            <div className="switch-body">
+              <h3 className="section-title">Streaming</h3>
+              <div className="switch-container">
+                <label className="switch btn-color-mode-switch">
+                  <input
+                    type="checkbox"
+                    name="color_mode"
+                    id="color_mode"
+                    value="1"
+                    onChange={handleMediaChange}
+                  />
+                  <label
+                    for="color_mode"
+                    data-on="TV Series"
+                    data-off="Movies"
+                    className="btn-color-mode-switch-inner"
+                  ></label>
+                </label>
+              </div>
+            </div>
+          </div>
           <div className="col-lg-7">
-            <h3 className="section-title">Movies for You</h3>{" "}
+            <h3 className="section-title">Network providers</h3>{" "}
             <Select
               mode="multiple"
               style={{ width: "100%" }}
@@ -82,7 +112,7 @@ export default function AsyncCollections() {
                 return (
                   <option value={item.id} key={item.id}>
                     {
-                      <div className="pratiksha">
+                      <div className="">
                         <img
                           className="option-image"
                           alt="example"
@@ -97,7 +127,7 @@ export default function AsyncCollections() {
               })}
             </Select>
           </div>
-          <div className="col-lg-5">
+          <div className="col-lg-3">
             <h3 className="section-title">Select Region</h3>{" "}
             <Select
               style={{ width: "100%" }}
@@ -111,6 +141,18 @@ export default function AsyncCollections() {
               <option value="AR">AR</option>
               <option value="AT">AT</option>
               <option value="AU">AU</option>
+              <option value="BE">BE</option>
+              <option value="BR">BR</option>
+              <option value="CH">CH</option>
+              <option value="Cl">Cl</option>
+              <option value="CO">CO</option>
+              <option value="CZ">CZ</option>
+              <option value="DE">DE</option>
+              <option value="DK">DK</option>
+              <option value="EC">EC</option>
+              <option value="ES">ES</option>
+              <option value="FI">FI</option>
+              <option value="FR">FR</option>
             </Select>
           </div>
         </div>
@@ -123,6 +165,7 @@ export default function AsyncCollections() {
           movie_collection="Comedy"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="ffriendhip">
@@ -132,6 +175,7 @@ export default function AsyncCollections() {
           movie_collection="Female Friendship"
           keywords="5248"
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="adventure">
@@ -141,6 +185,7 @@ export default function AsyncCollections() {
           movie_collection="Adventure"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="romance">
@@ -150,6 +195,7 @@ export default function AsyncCollections() {
           movie_collection="Romance"
           keywords="9840"
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="teen-movies">
@@ -159,6 +205,7 @@ export default function AsyncCollections() {
           movie_collection="Teen movies"
           keywords="11870"
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="rom-com">
@@ -168,6 +215,7 @@ export default function AsyncCollections() {
           movie_collection="Rom-Com"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="biography">
@@ -177,6 +225,7 @@ export default function AsyncCollections() {
           movie_collection="Biography"
           keywords="5565"
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="thriller">
@@ -186,6 +235,7 @@ export default function AsyncCollections() {
           movie_collection="Thriller"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="documentary">
@@ -195,6 +245,7 @@ export default function AsyncCollections() {
           movie_collection="Documentary"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="crime">
@@ -204,6 +255,7 @@ export default function AsyncCollections() {
           movie_collection="Crime scenes"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="mystery">
@@ -213,6 +265,7 @@ export default function AsyncCollections() {
           movie_collection="Mystery"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="ScienceFiction">
@@ -222,6 +275,7 @@ export default function AsyncCollections() {
           movie_collection="Science Fiction"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="Horror">
@@ -231,6 +285,7 @@ export default function AsyncCollections() {
           movie_collection="Horror"
           keywords=""
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="martin">
@@ -240,6 +295,7 @@ export default function AsyncCollections() {
           movie_collection="MLK Inspiration"
           keywords="5835"
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
       <div id="politics">
@@ -249,6 +305,7 @@ export default function AsyncCollections() {
           movie_collection="the American president"
           keywords="8570"
           region={region}
+          media_type={mediaType}
         ></AsyncMovies>
       </div>
     </div>

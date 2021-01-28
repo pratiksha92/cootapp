@@ -7,6 +7,7 @@ export default function AsyncMovies({
   watch_providers,
   keywords,
   region,
+  media_type,
 }) {
   const [movies, setMovies] = useState([]);
   const [category, setcategory] = useState("");
@@ -15,7 +16,7 @@ export default function AsyncMovies({
     async function getMovies() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&region=${region}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genres}&with_watch_providers=${watch_providers}&watch_region=US&with_keywords=${keywords}`
+          `https://api.themoviedb.org/3/discover/${media_type}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&region=${region}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genres}&with_watch_providers=${watch_providers}&watch_region=US&with_keywords=${keywords}`
         );
         const data = await response.json();
         const { results } = data;
@@ -36,6 +37,7 @@ export default function AsyncMovies({
                 name: title,
                 image: `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`,
                 region: region,
+                media_type: media_type,
               };
             });
           setMovies(newMovies);
@@ -49,7 +51,7 @@ export default function AsyncMovies({
       }
     }
     getMovies();
-  }, [genres, movie_collection, watch_providers, keywords, region]);
+  }, [genres, movie_collection, watch_providers, keywords, region, media_type]);
 
   const isgetMovies = movies.length > 0;
   return (

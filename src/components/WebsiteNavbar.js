@@ -33,9 +33,6 @@ export default class WebsiteNavbar extends Component {
               </NavDropdown.Item>
               <NavDropdown.Item href="#Horror">Horror</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Series" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            </NavDropdown>
           </Nav>
           <Nav></Nav>
         </Navbar.Collapse>

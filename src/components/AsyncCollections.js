@@ -3,10 +3,40 @@ import AsyncMovies from "../components/AsyncMovies";
 import "azure-storage/lib/azure-storage";
 import { Select } from "antd";
 
+const useStateWithLocalStorage = (localStorageKey, defaultValue) => {
+  const [value, setValue] = useState(
+    localStorage.getItem(localStorageKey) || defaultValue
+  );
+
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, value);
+  }, [value, localStorageKey]);
+
+  return [value, setValue];
+};
+
+const useArrayStateWithLocalStorage = (localStorageKey) => {
+  const [value, setValue] = useState(
+    JSON.parse(localStorage.getItem(localStorageKey)) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, JSON.stringify(value));
+  }, [value, localStorageKey]);
+
+  return [value, setValue];
+};
+
 export default function AsyncCollections() {
   const [netproviders, setNetproviders] = useState([]);
-  const [selproviders, setSelproviders] = useState("");
-  const [region, setRegion] = useState("US");
+  const [selproviders, setSelproviders] = useArrayStateWithLocalStorage(
+    "selProvidersValue"
+  );
+  const [selProvidersKeys, setSelProvidersKeys] = useArrayStateWithLocalStorage(
+    "selProvidersKeys"
+  );
+
+  const [region, setRegion] = useStateWithLocalStorage("regionKey", "US");
   const [mediaType, SetMediaType] = useState("movie");
 
   useEffect(() => {
@@ -59,6 +89,7 @@ export default function AsyncCollections() {
       fvalue = fvalue.concat(value[i]).concat("|");
     }
     setSelproviders(fvalue);
+    setSelProvidersKeys(value);
   }
 
   function handleRegion(value) {
@@ -105,7 +136,7 @@ export default function AsyncCollections() {
               mode="multiple"
               style={{ width: "100%" }}
               placeholder="Select your network"
-              defaultValue={[]}
+              defaultValue={selProvidersKeys}
               onChange={handleChange}
             >
               {netproviders.map((item) => {
@@ -132,7 +163,7 @@ export default function AsyncCollections() {
             <Select
               style={{ width: "100%" }}
               placeholder="Select your region"
-              defaultValue={"US"}
+              defaultValue={[region]}
               onChange={handleRegion}
             >
               <option value="CA">CA</option>

@@ -640,13 +640,6 @@ label {
   padding: 5px 0px;
 }
 
-/*.btn-color-mode-switch > .alert {
-  display: none;
-  background: #ff9800;
-  border: none;
-  color: #fff;
-}*/
-
 .btn-color-mode-switch input[type="checkbox"] {
   cursor: pointer;
   width: 50px;

@@ -11,7 +11,6 @@ const useStateWithLocalStorage = (localStorageKey, defaultValue) => {
   useEffect(() => {
     localStorage.setItem(localStorageKey, value);
   }, [value, localStorageKey]);
-
   return [value, setValue];
 };
 
@@ -37,7 +36,13 @@ export default function AsyncCollections() {
   );
 
   const [region, setRegion] = useStateWithLocalStorage("regionKey", "US");
-  const [mediaType, SetMediaType] = useState("movie");
+  const [mediaType, SetMediaType] = useStateWithLocalStorage(
+    "backendMediaKey",
+    "movie"
+  );
+  const [checkedValue, setCheckedValue] = useState(
+    localStorage.getItem("backendMediaKey") === "tv"
+  );
 
   useEffect(() => {
     async function getNetproviders() {
@@ -102,6 +107,7 @@ export default function AsyncCollections() {
     } else {
       SetMediaType("movie");
     }
+    setCheckedValue(value.target.checked);
   }
 
   return (
@@ -117,11 +123,11 @@ export default function AsyncCollections() {
                     type="checkbox"
                     name="color_mode"
                     id="color_mode"
-                    value="1"
                     onChange={handleMediaChange}
+                    checked={checkedValue}
                   />
                   <label
-                    for="color_mode"
+                    htmlFor="color_mode"
                     data-on="TV Series"
                     data-off="Movies"
                     className="btn-color-mode-switch-inner"

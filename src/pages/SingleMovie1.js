@@ -6,6 +6,9 @@ import AsyncCast from "../components/AsyncCast";
 import AsynCrew from "../components/AsyncCrew";
 import AsyncWatchProviders from "../components/AsyncWatchProviders";
 import AsyncRecommendation from "../components/AsyncRecommendation";
+//import ProgressBar from "../components/ProgressBar";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 export default function SingleMovie1() {
   let { id, region, media_type } = useParams();
@@ -32,6 +35,7 @@ export default function SingleMovie1() {
             original_name,
             number_of_seasons,
             number_of_episodes,
+            vote_average,
           } = data;
 
           const newMovie = {
@@ -47,6 +51,7 @@ export default function SingleMovie1() {
             original_name,
             number_of_seasons,
             number_of_episodes,
+            vote_average,
           };
           setMovie(newMovie);
         } else {
@@ -76,6 +81,7 @@ export default function SingleMovie1() {
       original_name,
       number_of_seasons,
       number_of_episodes,
+      vote_average,
     } = movie;
 
     return (
@@ -133,6 +139,22 @@ export default function SingleMovie1() {
                               ) : (
                                 <span></span>
                               )}
+                            </div>
+                            <div style={{ marginBottom: 10 }}>
+                              <div style={{ width: "10%" }}>
+                                <CircularProgressbar
+                                  value={vote_average * 10}
+                                  text={`${vote_average * 10}%`}
+                                  background
+                                  backgroundPadding={6}
+                                  styles={buildStyles({
+                                    backgroundColor: "black",
+                                    textColor: "#fff",
+                                    pathColor: "#44b247",
+                                    trailColor: "transparent",
+                                  })}
+                                />
+                              </div>
                             </div>
                             <div className="singlemovieheader-info">
                               <h3>Overview</h3>

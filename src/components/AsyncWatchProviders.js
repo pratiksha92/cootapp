@@ -64,7 +64,11 @@ export default function AsyncWatchProviders({ id, region, media_type }) {
   const isBuyprovider = buyprovider.length > 0;
   return (
     <div className="wprovider-section">
-      {isStreamprovider ? <h3 className="">Now streaming on</h3> : <div></div>}
+      {isStreamprovider ? (
+        <h3 className="wprovider-title">Now streaming on</h3>
+      ) : (
+        <div></div>
+      )}
       {isStreamprovider ? (
         streamprovider.map((item) => {
           return (

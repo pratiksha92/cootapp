@@ -116,9 +116,9 @@ export default function SingleMovie1() {
                               {original_name}
                             </h3>
                             <div className="singlemovie-subtitle">
-                              <span className="">{date}</span>
+                              <span className="singlemovie-date">{date}</span>
                               <div className="bullet"></div>
-                              <p>
+                              <p className="singlemovie-genre">
                                 {genres ? (
                                   genres.map((item) => {
                                     return (
@@ -140,8 +140,8 @@ export default function SingleMovie1() {
                                 <span></span>
                               )}
                             </div>
-                            <div style={{ marginBottom: 10 }}>
-                              <div style={{ width: "10%" }}>
+                            <div>
+                              <div className="singlemovie-circularbar">
                                 <CircularProgressbar
                                   value={vote_average * 10}
                                   text={`${vote_average * 10}%`}

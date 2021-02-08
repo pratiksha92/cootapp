@@ -313,10 +313,15 @@ ul {
   display: flex;
   flex-wrap: wrap;
   font-size: 14px;
-  margin-top: 0px;
+  margin-top: 1px;
+  margin-bottom: 18px;
   font-family: "Source Sans Pro", Arial, sans-serif !important;
   color: rgba(0, 0, 0, 1);
   font-weight: normal;
+}
+
+.singlemovie-genre {
+  margin-bottom: 0px;
 }
 
 .comma:not(:first-child):before {
@@ -335,6 +340,10 @@ ul {
   margin-top: 8px;
 }
 
+.singlemovie-circularbar {
+  width: 10%;
+}
+
 .singlemovieheader-info {
   width: 100%;
   font-family: "Source Sans Pro", Arial, sans-serif !important;
@@ -343,6 +352,7 @@ ul {
 .singlemovieheader-info h3 {
   font-size: 1.3rem;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 .singlemovieheader-info .overview {
@@ -350,6 +360,8 @@ ul {
   font-weight: 400;
   opacity: 0.7;
   letter-spacing: 0px;
+  margin: 0px;
+  padding: 0;
 }
 
 .singlemoviebox-text .wrap {
@@ -403,6 +415,15 @@ ul {
   .singlemovie-title {
     font-size: 1.4rem !important;
   }
+  .singlemovie-subtitle {
+    margin-bottom: 12px !important;
+  }
+  .singlemovieheader-info h3 {
+    margin-top: 12px !important;
+  }
+  .singlemovie-circularbar {
+    width: 16%;
+  }
   .castbar-container {
     padding: 30px 20px !important;
   }
@@ -425,6 +446,15 @@ ul {
   .singlemovie-title {
     font-size: 1.5rem !important;
   }
+  .singlemovie-subtitle {
+    margin-bottom: 12px !important;
+  }
+  .singlemovieheader-info h3 {
+    margin-top: 12px !important;
+  }
+  .singlemovie-circularbar {
+    width: 16%;
+  }
   .castbar-container {
     padding: 30px 20px !important;
   }
@@ -435,7 +465,6 @@ ul {
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   /* for tablet screen view */
-
   .singlemovieimage-box__content {
     margin: 0 !important;
     padding: 0 !important;
@@ -452,6 +481,9 @@ ul {
   }
   .singlemovie-title {
     font-size: 28px !important;
+  }
+  .singlemovie-circularbar {
+    width: 13%;
   }
   .movie-media .movie-status {
     padding-top: 20px !important;
@@ -474,11 +506,11 @@ ul {
 /* Cast card*/
 .ant-card {
   margin: 10px !important;
+  width: 150px;
 }
 
 .ant-card-cover img {
   height: 220px;
-  width: 170px;
 }
 
 .ant-card-body {
@@ -519,6 +551,7 @@ ul {
 
 .crewcontent {
   padding-right: 30px;
+  margin-top: -17px;
 }
 
 .crewheader .crewname {
@@ -534,14 +567,16 @@ ul {
 /* End Async Crew*/
 
 /* Async Watch Provider */
+.wprovider-section {
+  margin-top: -18px;
+}
 .wprovider-content {
   display: inline-block;
   padding-right: 8px;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
 }
 
 .wprovider-title {
-  padding-top: 3px;
   font-size: 16px !important;
 }
 /* End Async Watch Provider*/

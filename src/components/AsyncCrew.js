@@ -43,7 +43,7 @@ export default function AsyncCrew({ url }) {
     getCrew();
   }, [url]);
   return (
-    <div className="">
+    <div className="crew-container">
       {crew.map((item) => {
         return (
           <div className="crewheader" key={item.crewid}>
